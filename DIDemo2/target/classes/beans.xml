@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+	<bean name="human" class="com.app.Human" scope="prototype">
+	<!-- <constructor-arg ref="heart"></constructor-arg> -->
+	<property name="heart" ref="heartObject"></property>
+	</bean>
+		<bean name="heartObject" class="com.app.Heart"></bean>
+		
+		<!-- Heart heart = new Heart();
+		Human human  = new Human(heart); -->
+		
+		<!-- Heart heartObject = new Heart();
+		Human human  = new Human(); 
+		human.setHeart(heartObject);
+		-->
+		
+</beans>
