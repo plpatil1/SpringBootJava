@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+ <h2> Infoway Technology Home Page - Yoohoo !!!</h2>
+    <hr>
+    <p>
+    Welcome to the Infoway Technology home page!
+
+</p>
+<hr>
+
+<!-- display user name and role -->
+
+    <p>
+        User: <span sec:authentication="principal.username"></span>
+        <br><br>
+        Role(s): <span sec:authentication="principal.authorities"></span>
+    </p>
+
+<hr>
+
+<!-- Add a Logout button -->
+<form action="#" th:action="@{/logout}" method="post">   
+<input type="submit" value="Logout">
+</form>
+
+</body>
+</html>
